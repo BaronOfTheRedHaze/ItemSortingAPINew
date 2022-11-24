@@ -1,8 +1,13 @@
 package com.aws.codestar.projecttemplates.model;
 
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.NoArgsConstructor;
 
-
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class Item {
 
     private int id;
