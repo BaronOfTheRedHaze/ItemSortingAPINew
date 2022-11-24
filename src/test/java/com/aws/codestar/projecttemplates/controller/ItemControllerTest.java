@@ -1,5 +1,4 @@
 package com.aws.codestar.projecttemplates.controller;
-
 import com.aws.codestar.projecttemplates.model.Item;
 import com.aws.codestar.projecttemplates.model.ItemAccess;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -13,13 +12,11 @@ import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 import org.mockito.junit.MockitoJUnitRunner;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.annotation.Order;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
-
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.notNullValue;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
@@ -39,10 +36,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
     ObjectWriter objectWriter = objectMapper.writer();
 
-
     @Mock
     private ItemAccess itemAccess;
-
 
     @InjectMocks
     private ItemController itemController;
@@ -80,7 +75,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$", notNullValue()))
                 .andExpect(jsonPath("$.name", is("Rike")));
-
     }
 
 }
