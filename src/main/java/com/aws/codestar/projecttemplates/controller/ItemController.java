@@ -18,6 +18,10 @@ public class ItemController {
     @Autowired
     private ItemAccess itemAccess;
 
+    public ItemController(ItemAccess itemAccess) {
+        this.itemAccess = itemAccess;
+    }
+
     // Implementing a GET method
     // to get the list of all
     // the items

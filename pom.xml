@@ -20,7 +20,7 @@
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
         <junit.platform.version>1.2.0</junit.platform.version>
-        <junit.jupiter.version>5.2.0</junit.jupiter.version>
+        <junit.jupiter.version>5.9.0</junit.jupiter.version>
     </properties>
 
     <dependencies>
@@ -32,10 +32,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -46,7 +42,7 @@
         <dependency>
             <groupId>org.json</groupId>
             <artifactId>json</artifactId>
-            <version>20180130</version>
+            <version>20220924</version>
         </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
@@ -86,6 +82,7 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+
     </dependencies>
 
     <build>

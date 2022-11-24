@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 // of items
 public class ItemAccess {
 
-    private static ItemStorage list
+    private static final ItemStorage list
             = new ItemStorage();
 
     // This static block is executed
