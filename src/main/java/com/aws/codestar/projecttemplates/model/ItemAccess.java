@@ -1,40 +1,21 @@
 package com.aws.codestar.projecttemplates.model;
 
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
-@Repository
+import java.util.ArrayList;
 
-
-// Class to create a list
-// of items
+@Service
 public class ItemAccess {
 
-    private static final ItemStorage list
-            = new ItemStorage();
 
-    // This static block is executed
-    // before executing the main
-    // block
-    static
-    {
+    ArrayList<Item> myItem = new ArrayList<>();
+int latestItem;
 
-        list.getItemList().add(new Item(1,"First text"));
-
+    public Item createItem(Item newItem) {
+        latestItem++;
+        newItem.setId(latestItem);
+        myItem.add(newItem);
+        return newItem;
     }
 
-    // Method to return the list
-    public ItemStorage getAllItems()
-    {
-        return list;
-    }
-
-
-    // Method to add an item
-    // to the items list
-    public void
-    addItem(Item item)
-    {
-        list.getItemList().add(item);
-
-    }
 }

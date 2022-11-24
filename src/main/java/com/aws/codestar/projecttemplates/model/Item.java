@@ -1,70 +1,28 @@
 package com.aws.codestar.projecttemplates.model;
 
 
+
+
 public class Item {
 
-    // Parameterized Constructor
-    // to assign the values
-    // to the properties of
-    // the entity
-    public Item(
-            Integer id, String Name
-    )
-    {
+    private int id;
+    private String name;
 
-        super();
-
-        this.id = id;
-
-        this.Name = Name;
-
-
+    public String getName() {
+        return name;
     }
 
-    private Integer id;
-
-    private String Name;
-
-
-    // Overriding the toString method
-    // to find all the values
-    @Override
-    public String toString()
-    {
-
-        return "item [id="
-                + id + ", Name="
-                + Name + "]";
-
-
+    public void setName(String name) {
+        this.name = name;
     }
 
-    // Getters and setters of
-    // the properties
-    public Integer getId()
-    {
 
+    public int getId() {
         return id;
     }
 
-    public void setId(Integer id)
-    {
-
+    public void setId(int id) {
         this.id = id;
     }
-
-    public String getName()
-    {
-
-        return Name;
-    }
-
-    public void setName(
-            String Name)
-    {
-
-        this.Name = Name;
-    }
-
 
 }
