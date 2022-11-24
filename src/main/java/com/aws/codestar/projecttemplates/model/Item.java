@@ -4,6 +4,7 @@ package com.aws.codestar.projecttemplates.model;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.NoArgsConstructor;
+import lombok.NonNull;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -11,6 +12,7 @@ import lombok.NoArgsConstructor;
 public class Item {
 
     private int id;
+    @NonNull
     private String name;
 
     public String getName() {
