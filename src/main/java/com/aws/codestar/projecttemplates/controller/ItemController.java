@@ -30,22 +30,27 @@ public class ItemController {
     }
 
     @RequestMapping(value = "getbyid")
-
      public ResponseEntity<Item> getById(@RequestParam("id") int id)
     {
-        return new ResponseEntity<Item>(itemStorage.getItembyid(id), HttpStatus.OK);
+        return new ResponseEntity<Item>(itemStorage.getItembyid(id-1), HttpStatus.OK);
     }
 
     @RequestMapping(value = "listitems")
-    public ResponseEntity<ArrayList> listItems(){
-        return new ResponseEntity<>(itemStorage.listItems(), HttpStatus.OK);
-    }
+    public ResponseEntity<ArrayList> listItems() {
 
+        ArrayList returnlist = itemStorage.listItems();
+
+        if (returnlist.size() == 0) {
+            return new ResponseEntity(HttpStatus.BAD_REQUEST);
+        } else {
+            return new ResponseEntity<>(itemStorage.listItems(), HttpStatus.OK);
+        }
+    }
     @RequestMapping(value = "removebyid")
 
     public ResponseEntity<ArrayList> removeById(@RequestParam("id") int id)
     {
-        itemStorage.removeItem(id);
+        itemStorage.removeItem(id-1);
         return new ResponseEntity<>(itemStorage.listItems(), HttpStatus.OK);
     }
 }

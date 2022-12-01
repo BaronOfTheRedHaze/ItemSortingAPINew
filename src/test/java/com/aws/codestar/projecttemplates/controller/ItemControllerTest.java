@@ -58,7 +58,7 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
                 .id(3)
                 .name("Rike")
                 .build();
-        //Mockito.when(itemStorage.storeItem(item)).thenReturn(item);
+
 
         String content = objectWriter.writeValueAsString(item);
 
@@ -67,15 +67,37 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
                 .accept(MediaType.APPLICATION_JSON)
                 .content(content);
 
-
         ResultActions result = mockMvc.perform(mockRequest);
        System.out.println(result);
 
+    }
 
-        //mockMvc.perform(mockRequest)
-               // .andExpect(status().isOk())
-                //.andExpect(jsonPath("$", notNullValue()))
-                //.andExpect(jsonPath("$.name", is("Rike")));
+    @Test
+    public void listItems() throws Exception {
+        MockHttpServletRequestBuilder mockRequest = MockMvcRequestBuilders.get("/listitems")
+                .contentType(MediaType.APPLICATION_JSON)
+                .accept(MediaType.APPLICATION_JSON)
+                .content("");
+
+        ResultActions result = mockMvc.perform(mockRequest);
+        System.out.println(result);
+
+    }
+    @Test
+
+
+    public void getItemById() throws Exception {
+
+        String content = objectWriter.writeValueAsString(item_2);
+
+        MockHttpServletRequestBuilder mockRequest = MockMvcRequestBuilders.get("/getbyid?id=2")
+                .contentType(MediaType.APPLICATION_JSON)
+                .accept(MediaType.APPLICATION_JSON)
+                .content(content);
+
+        ResultActions result = mockMvc.perform(mockRequest);
+        System.out.println(result);
+
     }
 
 }
